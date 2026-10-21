@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn how to understand air quality measurements and AQI categories.">
+  <title>EcoWatch | About air quality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><script src="js/utils.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Dashboard</a><a href="map.html">Map</a><a href="trends.html">Trends</a><a href="alerts.html">Alerts</a><a href="about.html">About</a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle>☾ Dark mode</button></header>
+  <main class="page-shell inner-page">
+    <div class="page-intro"><span class="eyebrow">KNOW WHAT YOU BREATHE</span><h1>A clearer view of <span>the air around us.</span></h1><p>Air quality can change throughout the day. Here’s a quick guide to the readings EcoWatch follows.</p></div>
+    <section class="about-section"><div class="about-heading"><span class="eyebrow">THE MEASUREMENTS</span><h2>What’s in the air?</h2></div>
+      <div class="pollutant-grid">
+        <article class="pollutant-card"><span class="pollutant-symbol">PM</span><h3>PM2.5</h3><p>Tiny particles 2.5 micrometers wide or smaller. They can travel deep into the lungs and are often linked to traffic, fires, and fuel burning.</p></article>
+        <article class="pollutant-card"><span class="pollutant-symbol">PM</span><h3>PM10</h3><p>Particles 10 micrometers wide or smaller, including dust, pollen, and smoke. They can irritate the eyes, nose, throat, and lungs.</p></article>
+        <article class="pollutant-card"><span class="pollutant-symbol">CO</span><h3>Carbon monoxide</h3><p>A colorless gas produced by incomplete combustion. At high concentrations it reduces the oxygen carried through the body.</p></article>
+        <article class="pollutant-card"><span class="pollutant-symbol">NO₂</span><h3>Nitrogen dioxide</h3><p>A reactive gas mainly released by vehicles and power plants. It can inflame airways and contribute to particle pollution.</p></article>
+        <article class="pollutant-card"><span class="pollutant-symbol">O₃</span><h3>Ground-level ozone</h3><p>Forms when pollutants react in sunlight. This is not the protective ozone high in the atmosphere; it can make breathing uncomfortable.</p></article>
+        <article class="pollutant-card"><span class="pollutant-symbol">AQI</span><h3>Air Quality Index</h3><p>A single number that makes air quality easier to understand. Higher values mean greater potential health concern.</p></article>
+      </div>
+    </section>
+    <section class="about-section aqi-section"><div class="about-heading"><span class="eyebrow">THE US AQI SCALE</span><h2>Reading the colors</h2><p>EcoWatch uses the US Air Quality Index categories as a simple guide. Local health guidance may differ.</p></div>
+      <div class="aqi-list">
+        <article class="aqi-row"><span class="aqi-swatch good"></span><strong>0–50 · Good</strong><span>Air quality is satisfactory; little or no risk.</span></article>
+        <article class="aqi-row"><span class="aqi-swatch moderate"></span><strong>51–100 · Moderate</strong><span>Acceptable for most people; unusually sensitive people may be affected.</span></article>
+        <article class="aqi-row"><span class="aqi-swatch sensitive"></span><strong>101–150 · Sensitive groups</strong><span>Children, older adults, and people with heart or lung conditions may be affected.</span></article>
+        <article class="aqi-row"><span class="aqi-swatch unhealthy"></span><strong>151–200 · Unhealthy</strong><span>Everyone may begin to experience effects; sensitive groups face greater risk.</span></article>
+        <article class="aqi-row"><span class="aqi-swatch very-unhealthy"></span><strong>201–300 · Very unhealthy</strong><span>Health alert: everyone may experience more serious effects.</span></article>
+        <article class="aqi-row"><span class="aqi-swatch hazardous"></span><strong>301+ · Hazardous</strong><span>Health warning of emergency conditions; follow local public-health advice.</span></article>
+      </div>
+    </section>
+    <p class="disclaimer">EcoWatch is for awareness and education, not medical advice. Open-Meteo readings are model-based estimates and may not match local monitoring stations. For health decisions, follow guidance from your local authorities.</p>
+  </main>
+  <footer class="site-footer"><a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a><p>Built for a breath of fresh perspective.</p><span>Weather & air data by Open-Meteo</span></footer>
+</body></html>

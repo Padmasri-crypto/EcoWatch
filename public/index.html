@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf4ee">
+  <meta name="description" content="Live air quality and weather for your city, with helpful health guidance.">
+  <title>EcoWatch | City dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/utils.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Dashboard</a><a href="map.html">Map</a><a href="trends.html">Trends</a><a href="alerts.html">Alerts</a><a href="about.html">About</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle>☾ Dark mode</button>
+  </header>
+  <main class="page-shell">
+    <section class="hero hero--dashboard">
+      <div class="hero-copy"><span class="eyebrow"><span class="live-dot"></span> A little closer to the air you breathe</span>
+        <h1>Good air is a<br><span>breath of fresh</span> perspective.</h1>
+        <p>Check the latest air quality and weather in your neighborhood, and make today a healthier one.</p>
+      </div>
+      <div class="search-panel">
+        <form id="city-search-form" class="search-form">
+          <label class="sr-only" for="city-search">Search for a city</label>
+          <span aria-hidden="true">⌕</span><input id="city-search" name="city" placeholder="Search any city…" minlength="2" maxlength="80" autocomplete="address-level2" required>
+          <button class="button button--primary" type="submit">Explore</button>
+        </form>
+        <div class="search-divider"><span>or</span></div>
+        <button class="button button--outline button--location" type="button" id="use-location"><span aria-hidden="true">⌖</span> Use my location</button>
+        <p class="privacy-note">Your location is used only to find local conditions.</p>
+      </div>
+    </section>
+
+    <div id="dashboard-loading" class="loading-state" hidden><span class="spinner" aria-hidden="true"></span><span data-loading-label>Loading live conditions…</span></div>
+    <div id="dashboard-message" class="message" role="status" hidden></div>
+    <section id="dashboard-result" hidden aria-live="polite">
+      <div id="dashboard-alerts" class="alert-banner" hidden></div>
+      <div class="section-heading section-heading--reading">
+        <div><span class="eyebrow">YOUR LOCAL SNAPSHOT</span><h2 id="place-name">Madurai</h2><p id="place-coordinates" class="muted"></p></div>
+        <div class="reading-actions"><span id="last-updated" class="muted"></span><button class="button button--quiet" id="export-dashboard" type="button">↓ Export CSV</button></div>
+      </div>
+      <div id="metric-grid" class="metric-grid"></div>
+      <aside class="advice-panel"><span class="advice-icon" aria-hidden="true">♡</span><div><span class="eyebrow">A NOTE FOR YOUR DAY</span><p id="health-advice">Checking current air quality…</p></div></aside>
+    </section>
+
+    <section class="intro-strip"><span class="intro-icon" aria-hidden="true">⌁</span><div><h2>Small signals. Better decisions.</h2><p>Understand what’s in the air before your next walk, commute, or outdoor workout.</p></div><a href="about.html" class="text-link">Learn about air quality <span aria-hidden="true">→</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a><p>Built for a breath of fresh perspective.</p><span>Weather & air data by Open-Meteo</span></footer>
+</body>
+</html>

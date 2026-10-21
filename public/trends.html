@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore historical air quality and weather readings for saved cities.">
+  <title>EcoWatch | Trends</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/utils.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
+  <script src="js/trends.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Dashboard</a><a href="map.html">Map</a><a href="trends.html">Trends</a><a href="alerts.html">Alerts</a><a href="about.html">About</a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle>☾ Dark mode</button></header>
+  <main class="page-shell inner-page">
+    <div class="page-intro"><span class="eyebrow">THE BIGGER PICTURE</span><h1>Patterns worth <span>paying attention to.</span></h1><p>Look back at recent readings and see how your local air changes over time.</p></div>
+    <section class="panel chart-panel">
+      <div class="chart-toolbar">
+        <label>Location<select id="trend-location" aria-label="Choose location"></select></label>
+        <label>Measurement<select id="trend-pollutant" aria-label="Choose measurement">
+          <option value="aqi">US AQI</option><option value="pm25">PM2.5</option><option value="pm10">PM10</option><option value="co">Carbon monoxide</option><option value="no2">Nitrogen dioxide</option><option value="o3">Ozone</option><option value="temperature">Temperature</option><option value="humidity">Humidity</option><option value="wind_speed">Wind speed</option>
+        </select></label>
+        <label>Time period<select id="trend-range" aria-label="Choose time period"><option value="24h">Last 24 hours</option><option value="7d">Last 7 days</option></select></label>
+        <button id="export-trends" class="button button--quiet" type="button">↓ Export CSV</button>
+      </div>
+      <div id="trends-loading" class="loading-state" hidden><span class="spinner" aria-hidden="true"></span><span data-loading-label>Loading trends…</span></div>
+      <div id="trends-message" class="message" role="status" hidden></div>
+      <div class="chart-wrap"><canvas id="trend-chart" aria-label="Chart of environmental readings over time"></canvas></div>
+      <div id="trend-empty" class="empty-state" hidden><span aria-hidden="true">⌁</span><h3>No readings in this time period</h3><p>Try the 7-day view, or search for a city to save new readings.</p></div>
+      <p class="chart-caption">Each point represents a reading saved by EcoWatch. Search for a city to add more live observations.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a><p>Built for a breath of fresh perspective.</p><span>Weather & air data by Open-Meteo</span></footer>
+</body></html>

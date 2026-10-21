@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Set air quality thresholds and review alerts for your saved places.">
+  <title>EcoWatch | Alerts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/utils.js" defer></script><script src="js/alerts.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Dashboard</a><a href="map.html">Map</a><a href="trends.html">Trends</a><a href="alerts.html">Alerts</a><a href="about.html">About</a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle>☾ Dark mode</button></header>
+  <main class="page-shell inner-page">
+    <div class="page-intro"><span class="eyebrow">A HEADS-UP, WHEN IT MATTERS</span><h1>Stay a step <span>ahead of the air.</span></h1><p>Set your own limits and we’ll flag them the next time a reading crosses the line.</p></div>
+    <div class="alerts-layout">
+      <section class="panel alert-form-panel"><span class="eyebrow">NEW ALERT RULE</span><h2>Choose your threshold</h2>
+        <form id="alert-form" class="stacked-form">
+          <label for="alert-location">Saved location<select id="alert-location" name="location_id" required></select></label>
+          <label for="alert-pollutant">Measurement<select id="alert-pollutant" name="pollutant" required>
+            <option value="pm25">PM2.5 (µg/m³)</option><option value="pm10">PM10 (µg/m³)</option><option value="aqi">US AQI</option><option value="co">Carbon monoxide (µg/m³)</option><option value="no2">Nitrogen dioxide (µg/m³)</option><option value="o3">Ozone (µg/m³)</option>
+          </select></label>
+          <label for="alert-threshold">Alert me above<input id="alert-threshold" name="threshold" type="number" min="0" max="1000000" step="any" placeholder="For example, 100" required></label>
+          <button class="button button--primary" type="submit">Create alert</button>
+        </form>
+        <p class="form-note">Alerts are checked against the latest reading whenever a city is refreshed on the dashboard.</p>
+      </section>
+      <section class="alert-list-section"><div class="section-heading"><div><span class="eyebrow">YOUR RULES</span><h2>Active alerts</h2></div></div>
+        <div id="alerts-loading" class="loading-state"><span class="spinner" aria-hidden="true"></span><span data-loading-label>Loading alerts…</span></div>
+        <div id="alerts-message" class="message" role="status" hidden></div>
+        <div id="alert-list" class="alert-list"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>eco<span class="brand-light">watch</span></span></a><p>Built for a breath of fresh perspective.</p><span>Weather & air data by Open-Meteo</span></footer>
+</body></html>
